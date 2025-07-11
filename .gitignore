@@ -1,6 +1,8 @@
+# YOLOv11 Dental Segmentation - Git Ignore File
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
 
 # C extensions
@@ -46,7 +48,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
 cover/
@@ -94,35 +96,20 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
-
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 #poetry.lock
-#poetry.toml
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
 #pdm.lock
-#pdm.toml
-.pdm-python
-.pdm-build/
-
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-#pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
@@ -136,7 +123,6 @@ celerybeat.pid
 
 # Environments
 .env
-.envrc
 .venv
 env/
 venv/
@@ -170,38 +156,120 @@ cython_debug/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+#  be added to the global gitignore or merged into this project gitignore.
+#  For PyCharm Community Edition, use 'PyCharm CE' instead of 'PyCharm'.
+.idea/
 
-# Abstra
-# Abstra is an AI-powered process automation framework.
-# Ignore directories containing user credentials, local state, and settings.
-# Learn more at https://abstra.io/docs
-.abstra/
+# VS Code
+.vscode/
 
-# Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+# Mac OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Ruff stuff:
-.ruff_cache/
+# Windows
+*.tmp
+*.temp
+desktop.ini
 
-# PyPI configuration file
-.pypirc
+# Dataset folders (these can be large)
+data/
+dataset/
+datasets/
+images/
+labels/
+annotations/
 
-# Cursor
-#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
-#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
-#  refer to https://docs.cursor.com/context/ignore-files
-.cursorignore
-.cursorindexingignore
+# Model weights and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.model
+models/
+weights/
+checkpoints/
+trained_models/
+best_models/
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+# Training runs and logs
+runs/
+logs/
+tensorboard_logs/
+wandb/
+mlruns/
+experiments/
+
+# Results and outputs
+results/
+outputs/
+predictions/
+inference_results/
+test_results/
+val_results/
+
+# Temporary files
+temp/
+tmp/
+*.swp
+*.swo
+*~
+
+# Roboflow API keys and credentials
+roboflow_config.json
+.roboflow/
+api_keys.txt
+credentials.json
+
+# Large files that shouldn't be in version control
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+
+# Large image datasets
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.tif
+*.gif
+# Exception: keep sample images in specific folders
+!sample_images/
+!examples/
+!demo/
+
+# Jupyter notebook outputs (optional - uncomment if you want to ignore outputs)
+# *.ipynb
+
+# Cache directories
+cache/
+.cache/
+__pycache__/
+
+# Config files with sensitive information
+config.yaml
+config.yml
+secrets.yaml
+secrets.yml
+
+# Backup files
+*.bak
+*.backup
+*.old
